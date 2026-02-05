@@ -1,0 +1,265 @@
+
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+h1{
+  font-family: "IBM Plex Mono", monospace;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  line-height: 30px;
+
+  position: absolute;
+  top: 10%;
+  left: 5%;
+
+  width: 800px;
+  height: 100px;
+  padding: 10px;
+}
+
+/* main background */
+body {
+    padding: 40px;
+  box-sizing: border-box;
+  background-image: url("bg.png");
+  background-size: 100%;
+  background-repeat: repeat;
+  background-position: 0% 0%;
+  animation: drift 15s linear infinite;
+filter: blur(0.2px) contrast(150%);
+  position: relative;
+
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("bg.png"); /* second image */
+  background-size: 100%;
+  background-repeat: repeat;
+  background-position: 0% 0%;
+  opacity: 0.5;
+  pointer-events: none;
+  animation: driftOverlay 30s linear infinite reverse;
+  mix-blend-mode: multiply;
+}
+
+@keyframes drift {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes driftOverlay {
+  from {
+    background-position: 100% 0%;
+  }
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+.loading{
+  font-family: "IBM Plex Mono", monospace;
+    color: black;
+    font-size: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/* cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+
+  /* animation */
+  width: 0;
+  animation: typing 4s steps(17, end) forwards,
+    blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 17ch; } /* number of characters */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.loading_story {
+  font-family: "IBM Plex Mono", monospace;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.221);
+  font-size: 20px;
+  line-height: 30px;
+
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
+  width: 800px;
+  height: 520px;
+  padding: 10px;
+}
+
+.typewriter-animation { /* typewriter css https://prismic.io/blog/css-text-animations#css-typing-effects*/
+  animation: 
+    typewriter 2s steps(50) 1s 1 normal both, 
+    blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 50%; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+}
+
+
+
+.enter{
+  font-family: "IBM Plex Mono", monospace;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    font-size: 24px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: color 0.3s; /* smooth color change */
+    z-index: 10;
+  }
+
+.back{
+  font-family: "IBM Plex Mono", monospace;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    font-size: 24px;
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: color 0.3s; /* smooth color change */
+    z-index: 10;
+  }
+
+ .back:hover {
+     background-color: blue;
+    font-weight: bold;
+  }
+
+  .enter:hover {
+     background-color: blue;
+    font-weight: bold;
+  }
+
+    .hidden-text {
+    opacity: 0;                     /* start invisible */
+    animation: reveal 1s forwards;  /* run the animation once */
+    animation-delay: 8s;           /* wait 10 seconds before starting */
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;                   /* fade in to visible */
+    }
+}
+
+
+.scroll {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;   /* enable left-right scroll */
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+.scroll img {
+  display: block;
+}
+
+
+
+.locked-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 30px;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.61);
+  padding: 20px 30px;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  transition: opacity 0.2s ease;
+}
+
+body:has(area.locked-area:hover) .locked-text {
+  opacity: 1;
+}
+
+
+.story-text {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+
+  font-size: 15px;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.15em;
+  width: 400px;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.61);
+  padding: 20px 30px;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  transition: opacity 0.2s ease;
+}
+
+body:has(area.red:hover) .red-text {
+  opacity: 1;
+}
+
+body:has(area.yellow:hover) .yellow-text {
+  opacity: 1;
+}
+
+body:has(area.saturn:hover) .saturn-text {
+  opacity: 1;
+}
+
+body:has(area.tiger:hover) .tiger-text {
+  opacity: 1;
+}
+
+body:has(area.bigboss:hover) .bigboss-text {
+  opacity: 1;
+}
