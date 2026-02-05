@@ -23,7 +23,6 @@ h1{
   padding: 10px;
 }
 
-/* main background */
 body {
     padding: 40px;
   box-sizing: border-box;
@@ -37,11 +36,12 @@ filter: blur(0.2px) contrast(150%);
 
 }
 
+/* overlay two images of my background, animate it slightly, to create a moving background.  */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("bg.png"); /* second image */
+  background-image: url("bg.png"); 
   background-size: 100%;
   background-repeat: repeat;
   background-position: 0% 0%;
@@ -69,6 +69,7 @@ body::before {
   }
 }
 
+/* loading page typing effect: https://prismic.io/blog/css-text-animations#css-typing-effects */
 .loading{
   font-family: "IBM Plex Mono", monospace;
     color: black;
@@ -77,12 +78,11 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-/* cursor */
-  white-space: nowrap;
+
+    white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid black;
 
-  /* animation */
   width: 0;
   animation: typing 4s steps(17, end) forwards,
     blink 1s step-end infinite;
@@ -140,7 +140,7 @@ body::before {
     right: 5%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    transition: color 0.3s; /* smooth color change */
+    transition: color 0.3s;
     z-index: 10;
   }
 
@@ -154,7 +154,7 @@ body::before {
     left: 10%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    transition: color 0.3s; /* smooth color change */
+    transition: color 0.3s; 
     z-index: 10;
   }
 
@@ -169,22 +169,23 @@ body::before {
   }
 
     .hidden-text {
-    opacity: 0;                     /* start invisible */
-    animation: reveal 1s forwards;  /* run the animation once */
-    animation-delay: 8s;           /* wait 10 seconds before starting */
+    opacity: 0;                     
+    animation: reveal 1s forwards;  
+    animation-delay: 8s;           
   }
 
   @keyframes reveal {
     to {
-      opacity: 1;                   /* fade in to visible */
+      opacity: 1;                   
     }
 }
 
+/* https://www.w3schools.com/html/html_images_imagemap.asp */
 
 .scroll {
   width: 100vw;
   height: 100vh;
-  overflow-x: auto;   /* enable left-right scroll */
+  overflow-x: auto;   
   overflow-y: auto;
   white-space: nowrap;
 }
@@ -212,7 +213,7 @@ body::before {
 
   opacity: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100;
 
   transition: opacity 0.2s ease;
 }
@@ -239,7 +240,7 @@ body:has(area.locked-area:hover) .locked-text {
 
   opacity: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100;
 
   transition: opacity 0.2s ease;
 }
