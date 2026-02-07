@@ -114,20 +114,6 @@ body::before {
   padding: 10px;
 }
 
-.typewriter-animation { /* typewriter css https://prismic.io/blog/css-text-animations#css-typing-effects*/
-  animation: 
-    typewriter 2s steps(50) 1s 1 normal both, 
-    blinkingCursor 500ms steps(50) infinite normal;
-}
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 50%; }
-}
-@keyframes blinkingCursor{
-  from { border-right-color: rgba(255,255,255,.75); }
-  to { border-right-color: transparent; }
-}
-
 
 
 .enter{
@@ -146,7 +132,7 @@ body::before {
 
   .about{
   font-family: "IBM Plex Mono", monospace;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.852);
     white-space: nowrap;
     font-size: 24px;
     position: fixed;
