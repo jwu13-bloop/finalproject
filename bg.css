@@ -143,7 +143,7 @@ body::before {
     transition: color 0.3s; /* smooth color change */
     z-index: 10;
   }
-  
+
   .about{
   font-family: "IBM Plex Mono", monospace;
     color: rgba(255, 255, 255, 0.852);
@@ -298,4 +298,8 @@ body:has(area.bigboss:hover) .bigboss-text {
   padding: 5;
   width: auto;
   height: auto;
+}
+
+.final{
+  background-image: url(finalbg.png);
 }
