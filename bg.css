@@ -130,6 +130,20 @@ body::before {
     z-index: 10;
   }
 
+  .back{
+  font-family: "IBM Plex Mono", monospace;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    font-size: 24px;
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: color 0.3s; /* smooth color change */
+    z-index: 10;
+  }
+  
   .about{
   font-family: "IBM Plex Mono", monospace;
     color: rgba(255, 255, 255, 0.852);
@@ -143,20 +157,6 @@ body::before {
     transition: color 0.3s; /* smooth color change */
     z-index: 10;
 
-  }
-
-.back{
-  font-family: "IBM Plex Mono", monospace;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    font-size: 24px;
-    position: fixed;
-    bottom: 10%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: color 0.3s; /* smooth color change */
-    z-index: 10;
   }
 
   .block{
@@ -252,7 +252,7 @@ body:has(area.locked-area:hover) .locked-text {
 
   font-size: 15px;
   font-family: "IBM Plex Mono", monospace;
-  letter-spacing: 0.15em;
+  line-height: 30px;
   width: 400px;
 
   color: white;
@@ -284,4 +284,18 @@ body:has(area.tiger:hover) .tiger-text {
 
 body:has(area.bigboss:hover) .bigboss-text {
   opacity: 1;
+}
+
+
+.trinket{
+ position: fixed;
+  top: 2%;
+  right: 0%;
+  /* transform: translate(-50%, -50%); */
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.342);
+  border-radius: 100px 0px 0px 100px;
+  padding: 5;
+  width: auto;
+  height: auto;
 }
