@@ -66,24 +66,6 @@ top: -30%;
 }
 
 
-@keyframes morph{
-  0%, 100% {
-    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
-    transform: scale(var(--scale));
-  }
-  34% {
-    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
-    transform: scale(var(--scale));
-
-  }
-  67% {
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    transform: scale(var(--scale));
-
-  }
-}
-
-
 .bold{
     font-weight: bold;
 }
@@ -181,6 +163,64 @@ body.spell-combo .spell-image {
   animation: Path 1.8s ease-in forwards;
 }
 
+
+body.spell-combo .poem {
+    opacity: 0;
+}
+
+body.spell-combo #overlay {
+  display: none;
+}
+
+.sun {
+  position: fixed;
+  top: -5%;
+  left: 50%;
+transform: translate(-50%, -90%);
+  /* start off-screen (bottom-right) */
+  opacity: 0;
+
+  width: 100%; /* adjust */
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+body.spell-combo .sun {
+  animation: sun 2.2s ease-out forwards;
+}
+
+
+.key{
+    color: white;
+    position: fixed;
+    left: 5%;
+    bottom: 10%;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: lighter;
+    background-color: #0800ffcd;
+}
+
+body.spell-combo .key {
+  display: none;
+}
+
+@keyframes morph{
+  0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    transform: scale(var(--scale));
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    transform: scale(var(--scale));
+
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: scale(var(--scale));
+
+  }
+}
+
 @keyframes Path {
   from {
     opacity: 0;
@@ -210,31 +250,6 @@ body.spell-combo #blob {
   }
 }
 
-body.spell-combo .poem {
-    opacity: 0;
-}
-
-body.spell-combo #overlay {
-  display: none;
-}
-
-.sun {
-  position: fixed;
-  top: -5%;
-  left: 50%;
-transform: translate(-50%, -90%);
-  /* start off-screen (bottom-right) */
-  opacity: 0;
-
-  width: 100%; /* adjust */
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-body.spell-combo .sun {
-  animation: sun 2.2s ease-out forwards;
-}
-
 @keyframes sun{
   from {
     opacity: 0;
@@ -245,19 +260,4 @@ body.spell-combo .sun {
     opacity: 1;
     transform: translate(-50%, 0);
   }
-}
-
-
-.key{
-    color: white;
-    position: fixed;
-    left: 5%;
-    bottom: 10%;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: lighter;
-    background-color: #0800ffcd;
-}
-
-body.spell-combo .key {
-  display: none;
 }

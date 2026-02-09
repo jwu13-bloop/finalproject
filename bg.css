@@ -51,24 +51,6 @@ body::before {
   mix-blend-mode: multiply;
 }
 
-@keyframes drift {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 100% 100%;
-  }
-}
-
-@keyframes driftOverlay {
-  from {
-    background-position: 100% 0%;
-  }
-  to {
-    background-position: 0% 100%;
-  }
-}
-
 .loading{
   font-family: "IBM Plex Mono", monospace;
     color: black;
@@ -86,15 +68,6 @@ body::before {
   width: 0;
   animation: typing 4s steps(17, end) forwards,
     blink 1s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 17ch; } /* number of characters */
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
 }
 
 .loading_story {
@@ -196,12 +169,6 @@ body::before {
     animation-delay: 8s;           /* wait 10 seconds before starting */
   }
 
-  @keyframes reveal {
-    to {
-      opacity: 1;                   /* fade in to visible */
-    }
-}
-
 
 .scroll {
   width: 100vw;
@@ -302,4 +269,39 @@ body:has(area.bigboss:hover) .bigboss-text {
 
 .final{
   background-image: url(finalbg.png);
+}
+
+
+
+@keyframes drift {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes driftOverlay {
+  from {
+    background-position: 100% 0%;
+  }
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 17ch; } /* number of characters */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+  @keyframes reveal {
+    to {
+      opacity: 1;                   /* fade in to visible */
+    }
 }
