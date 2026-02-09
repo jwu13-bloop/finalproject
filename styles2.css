@@ -150,10 +150,9 @@ top: -30%;
   top: 60%;
   left: 50%;
 transform: translate(-50%, -50%);
-  /* start off-screen (bottom-right) */
   opacity: 0;
 
-  width: 100%; /* adjust */
+  width: 100%; 
   pointer-events: none;
 
   animation: none;
@@ -177,10 +176,10 @@ body.spell-combo #overlay {
   top: -5%;
   left: 50%;
 transform: translate(-50%, -90%);
-  /* start off-screen (bottom-right) */
+
   opacity: 0;
 
-  width: 100%; /* adjust */
+  width: 100%;
   pointer-events: auto;
   cursor: pointer;
 }

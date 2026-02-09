@@ -11,33 +11,33 @@
     </head>
     <style>
         body{
-            background-image: url(greenbg.png);
-            background-repeat: no-repeat;
-            background-position: center;
-        margin: 0;
-        height: 100vh;
-         background-size: cover;     
+          background-image: url(greenbg.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          margin: 0;
+          height: 100vh;
+          background-size: cover;     
 
-      color: white;
-      font-family: "IBM Plex Mono", monospace;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+          color: white;
+          font-family: "IBM Plex Mono", monospace;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
     }
 
     p{
-         font-family: "IBM Plex Mono", monospace;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
+          font-family: "IBM Plex Mono", monospace;
+          color: rgb(255, 255, 255);
+          font-size: 14px;
 
-  position: absolute;
-  top: 10%;
-  left: 8%;
+          position: absolute;
+          top: 10%;
+          left: 8%;
 
-  width: 150px;
-  height: 100px;
-  padding: 10px;
+          width: 150px;
+          height: 100px;
+          padding: 10px;
     }
 
      .back:hover {
@@ -60,7 +60,7 @@
     right: 5%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    transition: color 0.3s; /* smooth color change */
+    transition: color 0.3s; 
     z-index: 10;
   }
 
@@ -74,7 +74,7 @@
     left: 10%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    transition: color 0.3s; /* smooth color change */
+    transition: color 0.3s;
     z-index: 10;
   }
 
@@ -112,23 +112,23 @@
 }
 
 .hide{
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;}
 
-     .hidden-text {
-    opacity: 0;                     /* start invisible */
-    animation: reveal 1s forwards;  /* run the animation once */
-    animation-delay: 10s;           /* wait 10 seconds before starting */
+.hidden-text {
+    opacity: 0;                     
+    animation: reveal 1s forwards;  
+    animation-delay: 10s;           
   }
 
   @keyframes reveal {
     to {
-      opacity: 1;                   /* fade in to visible */
+      opacity: 1;                  
     }
 }
 
 
 
-}
+
 
         
     </style>
@@ -157,7 +157,7 @@
       activeImg = img;
       offsetX = e.clientX - img.offsetLeft;
       offsetY = e.clientY - img.offsetTop;
-      img.style.zIndex = 1000; // bring to front
+      img.style.zIndex = 1000;
     });
   });
 
@@ -179,7 +179,7 @@
   document.querySelectorAll(".hide").forEach(img => {
     img.addEventListener("click", (e) => {
       img.style.opacity = "0";
-      img.style.pointerEvents = "none"; // prevent future clicks
+      img.style.pointerEvents = "none";
     });
   });
 

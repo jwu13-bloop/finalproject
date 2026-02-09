@@ -89,16 +89,11 @@
   }
 
     .hidden-text {
-    opacity: 0;                     /* start invisible */
-    animation: reveals 1s forwards;  /* run the animation once */
-    animation-delay: 8s;           /* wait 10 seconds before starting */
+    opacity: 0;                     
+    animation: reveals 1s forwards;  
+    animation-delay: 8s;          
   }
 
-  @keyframes reveals {
-    to {
-      opacity: 1;                   /* fade in to visible */
-    }
-}
 
  .back:hover {
      background-color: blue;
@@ -111,18 +106,26 @@
   }
 
     .hide-text {
-    opacity: 1;                     /* start invisible */
-    animation: reveal 1s forwards;  /* run the animation once */
-    animation-delay: 2s;           /* wait 10 seconds before starting */
+    opacity: 1;                     
+    animation: reveal 1s forwards;  
+    animation-delay: 2s;           
   }
 
   @keyframes reveal {
     to {
-      opacity: 0;                   /* fade in to visible */
+      opacity: 0;                   
     }
 }
 
+  @keyframes reveals {
+    to {
+      opacity: 1;                  
+    }
+  }
+
   </style>
+
+  
 </head>
 <body>
 
